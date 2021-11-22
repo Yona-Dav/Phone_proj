@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}{{phone_number}}{% endblock %}
+{% block content %}
+{% if phone_number %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{phone_number.name}}</h5>
+        <p class="card-text">{{phone_number.phone_number}}</p
+        <p class="card-text">{{phone_number.email}}</p
+        <p class="card-text">{{phone_number.address}}</p>
+      </div>
+    </div>
+{% else %}
+    Nobody found with this phone number
+{% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}{{pers_name}}{% endblock %}
+{% block content %}
+{% if pers_name %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{pers_name.name}}</h5>
+        <p class="card-text">{{pers_name.phone_number}}</p
+        <p class="card-text">{{pers_name.email}}</p
+        <p class="card-text">{{pers_name.address}}</p>
+      </div>
+    </div>
+{%else%}
+<p>Nobody found with this name </p>
+{% endif %}
+{% endblock %}
