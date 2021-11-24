@@ -10,6 +10,7 @@
         <p class="card-text">{{pers_name.address}}</p>
       </div>
     </div>
+<a href="{% url 'search' %}" class="btn btn-primary">Search for another person</a>
 {%else%}
 <p>Nobody found with this name </p>
 {% endif %}
