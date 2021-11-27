@@ -24,12 +24,20 @@ def search_form(request):
         if form.is_valid():
             name = request.POST.get('name')
             phone_number = request.POST.get('phone_number')
+            email = request.POST.get('email')
             if len(name) != 0:
                 return redirect('name', name)
-            else:
+            elif len(phone_number)!=0:
                 return redirect('phone', phone_number)
-
+            else:
+                return redirect('email', email)
     else:
         form = PhoneForm()
     return render(request, 'search.html',{'form':form})
 
+def person_email(request,e_email):
+    try:
+        p_email = Phone.objects.get(email=e_email)
+    except Phone.DoesNotExist:
+        p_email = None
+    return render(request, 'email.html', {'pers_email': p_email})

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}{{pers_name}}{% endblock %}
+{% block content %}
+{% if pers_email %}
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{pers_email.name}}</h5>
+        <p class="card-text">{{pers_email.phone_number}}</p
+        <p class="card-text">{{pers_email.email}}</p
+        <p class="card-text">{{pers_email.address}}</p>
+      </div>
+    </div>
+<a href="{% url 'search' %}" class="btn btn-primary">Search for another person</a>
+{%else%}
+<p>Nobody found with this email </p>
+{% endif %}
+{% endblock %}
